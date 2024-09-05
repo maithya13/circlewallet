@@ -1,0 +1,19 @@
+POST https://api-sandbox.circle.com/v1/wallets
+Content-Type: application/json
+Authorization: Bearer {your_sandbox_api_key}
+
+{
+  "idempotencyKey": "{unique_key}",
+  "description": "Test wallet for user"
+}
+POST https://api-sandbox.circle.com/v1/simulate/settlement
+Content-Type: application/json
+Authorization: Bearer {your_sandbox_api_key}
+
+{
+  "walletId": "{wallet_id}",
+  "amount": {
+    "amount": "10.00",   // Specify the amount of USDC you want to fund
+    "currency": "USD"
+  }
+}
